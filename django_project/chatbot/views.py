@@ -5,7 +5,7 @@ import json
 import openai
 
 
-openai.api_key ="xai-vR2l2fmTLWyKQPuiluNgFxp0ge8sMNvssWIF6AfehT2ixpdap5AD93NpKNXNAWRwnPAnb6kkZxTUMSMJ"
+openai.api_key =""
 
 @csrf_exempt
 def chatbot_response(request):
