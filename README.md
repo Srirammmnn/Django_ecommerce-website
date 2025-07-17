@@ -1,1 +1,1 @@
-first project push
+first Django project push
