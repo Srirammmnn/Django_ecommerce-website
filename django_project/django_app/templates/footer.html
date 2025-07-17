@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <footer class="text-black py-4" style="background-color:  #98CD00;">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <h5 style="font-family: cursive;">E-Spark</h5>
+                <p class="small">Modern e-commerce platform offering a wide range of quality products at Unbeatable Prices.</p>
+                <img src="{% static 'images/newlogo.svg' %}"  width="50" height="50" >
+            </div>
+           
+            <div class="col-md-4 mb-3">
+                <ul class="list-unstyled" style="padding-left:60px">
+                    <h5>Links</h5>
+                    <li><a href="{% url 'index' %}" class="text-black" style="color: black;">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="text-black" style="color: black;">About us</a></li>
+                    <a href="{% url 'contact' %}" class="text-black" style="color: black;">Contact us</a></li>
+                    <li><a  aria-current="page" href="/logout" style="color: black;">Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <h5>Contact</h5>
+                <p class="small">
+                    Email: esparkoffcl@gmail.com<br>
+                    Phone: (+91) 9345893491<br>
+                    Instagram: espark.offcl<br>
+                    Address: Coimbatore,Tamilnadu,
+                    India-641004
+                </p>
+            </div>
+
+        </div>
+        
+        <div class="text-center pt-3 border-top">
+            <p class="small">&copy; 2025 E-spark. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>

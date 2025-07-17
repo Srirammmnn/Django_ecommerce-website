@@ -1,0 +1,99 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #a4dd00, #f0f9e8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 105vh;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      background: #f6fff3;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .card h3 {
+      color: #098b3d;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .form-control {
+      border-radius: 8px;
+    }
+
+    .btn-submit {
+      background-color: #06f61e;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-submit:hover {
+      background-color: #0a4e26;
+      transform: scale(1.03);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-floating label {
+      color: #6c757d;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .material-icons {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container signup-container">
+    <div class="card">
+      <h3><span class="material-icons"></span> Create an Account</h3>
+
+      <form method="POST" action="{% url 'sign' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-submit mt-3">
+          <span class="material-icons"></span> Register
+        </button>
+        
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

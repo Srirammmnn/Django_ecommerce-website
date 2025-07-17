@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="order-confirmation py-5" style="background-color: #f9f9f9;">
+  <div class="container text-center">
+    <div class="icon-check mb-4">
+      <img src="{% static 'img/success-tick.gif' %}" alt="Order Success" width="120">
+    </div>
+    <h2 class="fw-bold text-success">Thank you for your purchase!</h2>
+    <p class="lead">Your order has been placed successfully and is now being processed.</p>
+
+    <div class="card mt-5 shadow-sm mx-auto" style="max-width: 700px;">
+      <div class="card-body">
+      <h4 class="mb-3 text-start">Order Summary</h4>
+
+        {% for product in cart_products %}
+        <div class="row align-items-center mb-3">
+          <div class="col-3">
+            <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}">
+          </div>
+          <div class="col-6 text-start">
+            <h5 class="mb-1">{{ product.name }}</h5>
+          </div>
+          <div class="col-3 fw-bold">
+            ₹{{ product.sale_price|default:product.price }}
+          </div>
+        </div>
+        {% endfor %}
+
+        <hr>
+        
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <a href="{% url 'index' %}" class="btn btn-success me-2">Continue Shopping</a>    
+    </div>
+  </div>
+</section>
+
+<style>
+  .order-confirmation h2 {
+    color: #2c662d;
+  }
+  .icon-check img {
+    border-radius: 50%;
+    background: #e9ffe9;
+    padding: 10px;
+  }
+</style>
+
+{% endblock %}
